@@ -31,13 +31,13 @@ public class SnapshotShopper extends Activity {
         ShoppingListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         ShoppingListView.setItemsCanFocus(false);
         
-        ShoppingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
-            	sendMessage(view);
-            }
-
-        });
+//        ShoppingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            public void onItemClick(AdapterView<?> parent, View view,
+//                    int position, long id) {
+//            	sendMessage(view);
+//            }
+//
+//        });
     }
 
     @Override
