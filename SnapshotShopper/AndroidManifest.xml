@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".SnapshotShopper"
-            android:label="@string/title_activity_snapshot_shopper" >
+            android:label="@string/title_activity_snapshot_shopper" 
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
