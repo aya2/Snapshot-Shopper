@@ -6,7 +6,11 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 
 public class SnapshotShopper extends Activity {
@@ -17,6 +21,23 @@ public class SnapshotShopper extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snapshot_shopper);
+        
+        String[] ShoppingListItems={"apple", "pear", "grape", "chicken", "milk"};
+        
+        ListView ShoppingListView = (ListView)findViewById(R.id.ShoppingList);
+        
+        ShoppingListView.setAdapter(new ArrayAdapter<String>(this,
+        		android.R.layout.simple_list_item_multiple_choice, ShoppingListItems));
+        ShoppingListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        ShoppingListView.setItemsCanFocus(false);
+        
+        ShoppingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                    int position, long id) {
+            	sendMessage(view);
+            }
+
+        });
     }
 
     @Override

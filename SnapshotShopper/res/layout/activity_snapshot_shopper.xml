@@ -14,10 +14,6 @@
 		    android:layout_height="wrap_content"
 		    android:hint="@string/edit_message" />
 
-		<RelativeLayout
-		    android:layout_width="wrap_content"
-		    android:layout_height="match_parent" >
-		</RelativeLayout>
 <!-- 		SendMessage is the name of the method the activity calls when user clicks the button. -->
 		
         <TextView
@@ -25,13 +21,15 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_medium"
             tools:context=".SnapshotShopper" />
+        
 
         <ListView
             android:id="@+id/ShoppingList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_message"
-            android:entries="@array/colors" 
+            android:choiceMode="multipleChoice"
+            
             >
             
         </ListView>
