@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -82,11 +84,26 @@ public class SnapshotShopper extends Activity {
     }
     
     //clear the list when user clicks the Clear List button
+    //Alerts the user with a confirmation window before clearing the list.
+    //Source: http://stackoverflow.com/questions/5127407/android-preference-confirm-dialog
+    //malte at etlam dot com
     public void clearList(View view){
-    	//clear list
-    	ShoppingListItems.clear();
-    	//notify that list got updated so it can refresh the list on screen
-    	listAdapter.notifyDataSetChanged();
+    	new AlertDialog.Builder(this)
+    		.setMessage("Do you really want to clear this list?")
+    		.setTitle("Confirmation")
+    		.setIcon(android.R.drawable.ic_dialog_alert)
+    		.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener(){
+    			public void onClick(DialogInterface dialog, int button){
+    				//clear list
+    				ShoppingListItems.clear();
+    				//notify that list got updated so it can refresh the list on screen
+    				listAdapter.notifyDataSetChanged();
+    				}
+    			})
+    			.setNegativeButton(android.R.string.no, null).show();
+    	
+    	
+    	
     }
 }
 
