@@ -4,42 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="horizontal" >
 
-<!--         <Gallery -->
-<!--             android:id="@+id/gallery1" -->
-<!--             android:layout_width="match_parent" -->
-<!--             android:layout_height="wrap_content" /> -->
+    <!-- <Gallery -->
+    <!-- android:id="@+id/gallery1" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" /> -->
 
-		<EditText android:id="@+id/edit_message"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:hint="@string/edit_message" />
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_message" />
 
-<!-- 		SendMessage is the name of the method the activity calls when user clicks the button. -->
-		
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/padding_medium"
-            tools:context=".SnapshotShopper" />
-        
+    <!-- SendMessage is the name of the method the activity calls when user clicks the button. -->
 
-        <ListView
-            android:id="@+id/ShoppingList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/edit_message"
-            android:choiceMode="multipleChoice"
-            
-            >
-            
-        </ListView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_medium"
+        tools:context=".SnapshotShopper" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ShoppingList"
-            android:layout_toRightOf="@+id/edit_message"
-            android:onClick="sendMessage"
-            android:text="@string/button_send" />
+    <ListView
+        android:id="@+id/ShoppingList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_message"
+        android:layout_above="@+id/ClearBtn"
+        android:choiceMode="multipleChoice" >
+    </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/edit_message"
+        android:onClick="addToList"
+        android:text="@string/button_send" />
+
+    <Button
+        android:id="@+id/ClearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="clearList"
+        android:text="@string/button_clear" />
 
 </RelativeLayout>
