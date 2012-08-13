@@ -33,15 +33,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
-public class DisplayMessageActivity extends Activity {
+public class AddNewItemActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+        setContentView(R.layout.activity_add_new_item);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
         
         //Get message from intent
@@ -49,17 +50,25 @@ public class DisplayMessageActivity extends Activity {
         String message = intent.getStringExtra(SnapshotShopper.EXTRA_MESSAGE);
         
         //create the text view
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
+        //TextView textView = new TextView(this);
+        //textView.setTextSize(24);
+        //textView.setText(message);
+        
+        //create textbox
+        EditText editText = new EditText(this);
+        editText.setText(message);
         
         //Set the text view as the activity layout
-        setContentView(textView);
+        setContentView(editText);
+        
+        EditText enteredText = (EditText) findViewById(R.id.edit_message);
+        enteredText.setText("oranges");
+        
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_display_message, menu);
+        getMenuInflater().inflate(R.menu.activity_add_new_item, menu);
         return true;
     }
 

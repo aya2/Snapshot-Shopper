@@ -1,4 +1,5 @@
-<!-- //***********************************************************************************
+<!--
+ //***********************************************************************************
 // Copyright (C) 2012  Aya Yakura
 //
  /* This program is free software: you can redistribute it and/or modify
@@ -24,8 +25,8 @@
 //Portions of this page are modifications based on work created and shared by 
 //the Android Open Source Project and used according to terms described in the 
 //Creative Commons 2.5 Attribution License.
-//*********************************************************************************** -->
-
+//***********************************************************************************
+-->
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -43,6 +44,7 @@
         android:id="@+id/edit_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageButton"
         android:hint="@string/edit_message" />
 
     <!-- SendMessage is the name of the method the activity calls when user clicks the button. -->
@@ -57,9 +59,10 @@
         android:id="@+id/ShoppingList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_message"
         android:layout_above="@+id/ClearBtn"
+        android:layout_below="@+id/imageButton"
         android:choiceMode="multipleChoice" >
+
     </ListView>
 
     <Button
@@ -77,5 +80,14 @@
         android:layout_centerHorizontal="true"
         android:onClick="clearList"
         android:text="@string/button_clear" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="callCamera"
+        android:src="@drawable/ic_launcher" />
 
 </RelativeLayout>

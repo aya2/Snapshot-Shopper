@@ -27,6 +27,7 @@ package com.snapshotshopper;
 import java.util.ArrayList;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -65,7 +66,7 @@ public class SnapshotShopper extends Activity {
         
       //**************************************************************************************************
       //Modified from following source:
-      //Source: http://stackoverflow.com/questions/4540754/add-dynamically-elements-to-a-listview-android
+      //Source: http://stackoverflow.com/questions/454075enteredText.;4/add-dynamically-elements-to-a-listview-android
       //Author: Shardul
       //Author's profile page: http://stackoverflow.com/users/514553/shardul
         listAdapter = new ArrayAdapter<String>(this,
@@ -99,22 +100,21 @@ public class SnapshotShopper extends Activity {
 //Author's profile page: http://stackoverflow.com/users/514553/shardul
 
     public void addToList(View view){
-
+    	
     	//to use the textbox
     	EditText enteredText = (EditText) findViewById(R.id.edit_message);
     	//holds the entry by the user
     	String entry = "";
-    	entry = enteredText.getText().toString(); //get the text entered
+    	entry = enteredText.getText().toString(); //get the text entered	
+    		
     	//if the text box was not empty
-    	if (!entry.equals("") && !entry.equals("\n")){
+    	if (!entry.equals("") && !entry.equals("\n")){ //if the entry is not empty or a newline
     		ShoppingListItems.add(entry);
     		//notify that list got updated so it can refresh the list on screen
     		listAdapter.notifyDataSetChanged();
+    		enteredText.setText(""); //clear the text box after updating the list
     	}
     	
-
-    	//clear the text box so the user can enter another item
-    	//findViewById(R.id.edit_message)
     }
 //**************************************************************************************************
     
@@ -141,5 +141,23 @@ public class SnapshotShopper extends Activity {
     			.setNegativeButton(android.R.string.no, null).show(); 	
     }
 //**************************************************************************************************
+    
+//**************************************************************************************************
+    //Calls a new activity for adding in a picture.
+//    public void takePicture(View view, String entry){
+//    	Intent intent = new Intent(this, AddNewItemActivity.class);
+//    	
+//    	intent.putExtra(EXTRA_MESSAGE, entry);
+//    	startActivity(intent); //start the new activity
+//    }
+    
+    
+    //Calls the camera to take pictures before adding item to list
+    public void callCamera (View view){
+    	//Call the camera
+    	Intent cameraintent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    	startActivityForResult(cameraintent, 0);
+    }
+
 }
 
