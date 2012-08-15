@@ -27,31 +27,11 @@
 //Creative Commons 2.5 Attribution License.
 //***********************************************************************************
 -->
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
-
-    <!-- <Gallery -->
-    <!-- android:id="@+id/gallery1" -->
-    <!-- android:layout_width="match_parent" -->
-    <!-- android:layout_height="wrap_content" /> -->
-
-    <EditText
-        android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imageButton"
-        android:hint="@string/edit_message" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding_medium"
-        tools:context=".SnapshotShopper" />
 
     <ListView
         android:id="@+id/ShoppingList"
@@ -61,15 +41,7 @@
         android:layout_below="@+id/imageButton"
         android:choiceMode="multipleChoice"
         android:longClickable="true" >
-
     </ListView>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/edit_message"
-        android:onClick="addToList"
-        android:text="@string/button_send" />
 
     <Button
         android:id="@+id/ClearBtn"
@@ -84,9 +56,28 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/edit_message"
         android:onClick="callCamera"
         android:src="@drawable/ic_launcher" />
+
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/edit_message" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/AddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/edit_message"
+        android:onClick="addToList"
+        android:text="@string/button_send" />
 
 </RelativeLayout>
