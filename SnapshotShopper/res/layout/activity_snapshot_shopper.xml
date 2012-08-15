@@ -47,8 +47,6 @@
         android:layout_toRightOf="@+id/imageButton"
         android:hint="@string/edit_message" />
 
-    <!-- SendMessage is the name of the method the activity calls when user clicks the button. -->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/ClearBtn"
         android:layout_below="@+id/imageButton"
-        android:choiceMode="multipleChoice" >
+        android:choiceMode="multipleChoice"
+        android:longClickable="true" >
 
     </ListView>
 

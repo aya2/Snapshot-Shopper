@@ -1,4 +1,28 @@
+<!-- //***********************************************************************************
+// Copyright (C) 2012  Aya Yakura
+//
+ /* This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+//
+// Contact information:
+// email: aya2@pdx.edu
+
+//Portions of this page are modifications based on work created and shared by 
+//the Android Open Source Project and used according to terms described in the 
+//Creative Commons 2.5 Attribution License. 
+//***********************************************************************************
+  -->
+  
 <resources>
 
     <string name="app_name">SnapshotShopper</string>
@@ -7,9 +31,10 @@
     <string name="title_activity_snapshot_shopper">SnapshotShopper</string>
     <string name="button_send">Add</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_add_new_item">Add a new item</string>
+    <string name="title_activity_add_new_item">Edit item</string>
 	<string name="button_clear">Clear List</string>
-
+	<string name="apply_changes">Apply Changes</string>
+	<string name="delete_item">Delete This Item</string>
     <string name="title_activity_shopping_list">Shopping List</string>
 
 </resources>

@@ -37,6 +37,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -75,14 +76,22 @@ public class SnapshotShopper extends Activity {
         ShoppingListView.setItemsCanFocus(false);
         ShoppingListView.setAdapter(listAdapter);
         
+        
+        	//**************************************************************************************************
+        	//Modified from following source:
+        	//Source: http://stackoverflow.com/questions/6205808/how-to-handle-long-tap-on-listview-item
+            //Author: Aleadam
+        	//Author's profile page: http://stackoverflow.com/users/542701/aleadam
+        	ShoppingListView.setOnItemLongClickListener(new OnItemLongClickListener(){
+        		public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        			String dummy = "edit item entry here";
+        			takePicture(view, dummy);
+        			return false;
+        		}
+        	});
+        	//**************************************************************************************************
+
       //**************************************************************************************************
-//        ShoppingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                    int position, long id) {
-//            	sendMessage(view);
-//            }
-//
-//        });
     }
     
     @Override
@@ -142,14 +151,13 @@ public class SnapshotShopper extends Activity {
     }
 //**************************************************************************************************
     
-//**************************************************************************************************
     //Calls a new activity for adding in a picture.
-//    public void takePicture(View view, String entry){
-//    	Intent intent = new Intent(this, AddNewItemActivity.class);
-//    	
-//    	intent.putExtra(EXTRA_MESSAGE, entry);
-//    	startActivity(intent); //start the new activity
-//    }
+    public void takePicture(View view, String entry){
+    	Intent intent = new Intent(this, EditItemEntry.class);
+    	
+    	intent.putExtra(EXTRA_MESSAGE, entry);
+    	startActivity(intent); //start the new activity
+    }
     
     
     //Calls the camera to take pictures before adding item to list

@@ -1,4 +1,5 @@
-<!-- //***********************************************************************************
+<!--
+ //***********************************************************************************
 // Copyright (C) 2012  Aya Yakura
 //
  /* This program is free software: you can redistribute it and/or modify
@@ -24,22 +25,23 @@
 //Portions of this page are modifications based on work created and shared by 
 //the Android Open Source Project and used according to terms described in the 
 //Creative Commons 2.5 Attribution License.
-//*********************************************************************************** -->
+//***********************************************************************************
+-->
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNewItemActivity" >
+    android:orientation = "horizontal">
 
     <EditText 
+        android:id="@+id/edit_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:hint="@string/edit_message"
-        />
+        android:hint="@string/edit_message"/>
     
     
      <!-- <TextView
@@ -49,5 +51,30 @@
         android:layout_centerVertical="true"
         android:padding="@dimen/padding_medium"
         tools:context=".AddNewItemActivity" />  -->
+
+    <ImageButton
+        android:id="@+id/edit_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_item_name"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher"
+        android:onClick="callCamera" />
+
+    <Button
+        android:id="@+id/delete_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/delete_item" />
+
+    <Button
+        android:id="@+id/apply_changes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_item_name"
+        android:layout_centerHorizontal="true"
+        android:text="@string/apply_changes" />
 
 </RelativeLayout>

@@ -29,20 +29,22 @@
 package com.snapshotshopper;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
-public class AddNewItemActivity extends Activity {
+public class EditItemEntry extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_new_item);
+        setContentView(R.layout.activity_edit_item_entry);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
         
         //Get message from intent
@@ -54,18 +56,22 @@ public class AddNewItemActivity extends Activity {
         //textView.setTextSize(24);
         //textView.setText(message);
         
-        //create textbox
-        EditText editText = new EditText(this);
+        //set text in textbox
+        EditText editText = (EditText) findViewById(R.id.edit_item_name);
         editText.setText(message);
         
-        //Set the text view as the activity layout
-        setContentView(editText);
-        
+        //change the text in list
         EditText enteredText = (EditText) findViewById(R.id.edit_message);
-        enteredText.setText("oranges");
+        //enteredText.setText("oranges");
         
     }
 
+    public void callCamera (View view){
+    	//Call the camera
+    	Intent cameraintent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    	startActivityForResult(cameraintent, 0);
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_add_new_item, menu);
