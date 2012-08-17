@@ -8,3 +8,5 @@ Additional possible features:
 1.Option to chose existing photos from the photo album. 
 2.Option to draw/write by free-hand and save it as a screenshot, and associate it with a shopping list entry. 
 3. Multiple categories that users can name freely. 
+
+For more information, read the README.txt file in folder SnapshotShopper.
