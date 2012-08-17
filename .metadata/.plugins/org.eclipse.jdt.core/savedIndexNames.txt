@@ -1,1 +1,0 @@
-INDEX VERSION 1.126+D:\Ayas Folder\Classes\Dropbox\CS410\SnapshotShopper\Snapshot-Shopper\.metadata\.plugins\org.eclipse.jdt.core
