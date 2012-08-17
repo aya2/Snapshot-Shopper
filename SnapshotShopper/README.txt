@@ -47,3 +47,6 @@ Things to be implemented in the future:
 >Edit page actually reflecting changes to the main list
 >Be able to save the list even when clicking the back button to exit the app.
  Currently, the list is saved as long as the app is closed using the home button.
+
+Last Revised August 17, 2012
+
